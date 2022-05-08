@@ -6,7 +6,8 @@ This repository contains all files required to run the [French Sightread Tournam
 
 In order to run the bot properly, you must :
 + Fill the `config.py` file
-+ Fill the `pools` folder with `.txt` files containing each "pool" (eg : `nm.txt`, `hd.txt`, ...). 
++ Fill the `pools` folder with `.txt` files containing each "pool" (eg : `nm.txt`, `hd.txt`, ...).
+  + Those pool files contain map links, one per line.
 + Have [Python](https://www.python.org/downloads/) installed on your machine
 
 ## Commands
