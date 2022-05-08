@@ -35,10 +35,8 @@ py bot.py
 
 First, run the bot.
 
-If you are running the bot on the account that is reffing, make sure to run it before creating the multiplayer lobby.
++ If you are running the bot on the account that is reffing, make sure to run it before creating the multiplayer lobby. Once the lobby is created, the bot will automatically join it.
 
-Once the lobby is created, the bot will automatically join it.
-
-If you are not running the bot on the same account, send the `!join_mp` to the bot. It should send a message in the room.
++ If you are not running the bot on the same account, send the `!join_mp` to the bot. It should send a message in the room.
 
 Then, you can use the commands freely.
