@@ -30,6 +30,8 @@ while 1:
                     mp = (re.findall("([^\/]+$)", mplink))[0].strip()
                     # Joining multiplayer lobby
                     print(datetime.now().strftime("%Y-%m-%d %H:%M:%S") + " : " + ref + " : Self-reffing " + mp)
+                    # Joining multiplayer lobby
+                    irc.join_mp(mp)
                     # Win condition : Score v2
                     irc.message_mp(mp, "!mp set 2 3")
                     # Connection message
