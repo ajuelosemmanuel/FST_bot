@@ -66,3 +66,4 @@ while 1:
                         irc.message_mp(mp, "!mp mods nf")
                     else:
                         irc.message_mp(mp, "!mp mods nf " + el.lower())
+                    irc.message_mp(mp, "!mp timer 30")
