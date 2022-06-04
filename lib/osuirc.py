@@ -62,3 +62,6 @@ class osuIRC:
         Records the last <bits> bits, using the built in recv function.
         """
         return self.irc.recv(bits)
+    
+    def pong(self):
+        self.irc.send(bytes("PONG cho.ppy.sh\n", "UTF-8"))
