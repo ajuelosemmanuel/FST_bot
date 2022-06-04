@@ -16,8 +16,6 @@ while 1:
     # Getting the messages from the IRC server
     text=irc.recv(2040)
     text_str = text.decode("utf-8")
-    if "Lexonox" in text_str:
-        print(text_str)
     for ref in referees:
         # self-ref and !join_mp command
         if username == ref:
@@ -51,6 +49,7 @@ while 1:
         
         # !FST command
         for el in pool["AvailablePools"]:
+            # Quick fix for multiref
             mp = (re.findall("(?<=:" + ref + "!cho@ppy.sh PRIVMSG #mp_)(.*)(?= :)", text_str))
             if mp != []:
                 mp = mp[0].strip().split(" ")[0]
