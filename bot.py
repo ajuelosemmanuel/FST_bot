@@ -49,7 +49,6 @@ while 1:
         
         # !FST command
         for el in pool["AvailablePools"]:
-            # Quick fix for multiref
             mp = (re.findall("(?<=:" + ref + "!cho@ppy.sh PRIVMSG #mp_)(.*)(?= :)", text_str))
             if mp != []:
                 mp = mp[0].strip().split(" ")[0]
@@ -58,8 +57,6 @@ while 1:
             if ref+"!cho@ppy.sh PRIVMSG #mp_" + mp + " :!FST " + el in text_str:
                 # Logging
                 print(datetime.now().strftime("%Y-%m-%d %H:%M:%S") + " : " + ref + " : !FST " + el)
-                # Choosing a random map in the pool
-                irc.message_mp(mp, "!mp map "+ random.choice(pool[el]))
                 # Choosing the right mods
                 if el == "TB" or el == "FM":
                     irc.message_mp(mp, "!mp mods freemod")
@@ -67,4 +64,11 @@ while 1:
                     irc.message_mp(mp, "!mp mods nf")
                 else:
                     irc.message_mp(mp, "!mp mods nf " + el.lower())
+                # Choosing a random map in the pool
+                irc.message_mp(mp, "!mp map "+ random.choice(pool[el]))
+                # Timer
                 irc.message_mp(mp, "!mp timer 30")
+        
+    if 'PING cho.ppy.sh' in text_str:
+        # Keep the connection alive
+        irc.pong()
